@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!-- A simple program for performing Arithmetic operations on 2 operands -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+    <title></title>
+    <script src="Scripts/jquery-2.1.0.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".class1").click(function () {
+                var v1 = $("#txt1").val();
+                var v2 = $("#txt2").val();
+                var err = "";
+                if (v1 == "" || v2 == "") {
+                    if (v1 == "")
+                        err += "please enter value1"+"\n";
+                    if (v2 == "")
+                        err += "Please enter value2"+"\n";
+                }
+                if (err !=="") {
+                    alert(err);
+                    return false;
+                }
+                $("#btnAdd").click(function () {
+                    var Result = parseFloat(v1) + parseFloat(v2);
+                    $("#txtResult").val(Result);
+                });
+                $("#btnSub").click(function () {
+                    var Result = parseFloat(v1) - parseFloat(v2);
+                    $("#txtResult").val(Result);
+                });
+                $("#btnMul").click(function () {
+                    var Result = parseFloat(v1) * parseFloat(v2);
+                    $("#txtResult").val(Result);
+                });
+                $("#btnDiv").click(function () {
+                    var Result = parseFloat(v1) / parseFloat(v2);
+                    $("#txtResult").val(Result);
+                });
+               
+            });
+        });
+
+    </script>
+</head>
+<body>
+    <b>Enter Value1:</b><input type="text" id="txt1" /><br /><br />
+    <b>Enter Value2:</b><input type="text" id="txt2" /><br /><br />
+    <input type="button" id="btnAdd" value="Add" class="class1" />
+    &nbsp;&nbsp;
+    <input type="button" id="btnSub" value="Sub" class="class1" />
+     &nbsp;&nbsp;
+    <input type="button" id="btnMul" value="Mul" class="class1" />
+    &nbsp;&nbsp;
+    <input type="button" id="btnDiv" value="Div" class="class1" />
+    <br /><br />
+    <b>Result</b><input type="text" id="txtResult" />
+</body>
+</html>
