@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!-- A simple program for scolling the text horizontally -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/jquery-2.1.0.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        function moving() {
+            $("#span1").animate({ "left": "+=1000" }, 5000);
+            $("#span1").animate({ "left": "-=1000" }, 5000);
+        }
+        $(document).ready(function () {
+            window.setInterval(moving, 2000);
+        });
+    </script>
+    <style type="text/css">
+        #span1 {
+            font-size:50px;
+            font-family:Tahoma;
+            font-weight:bold;
+            position:absolute;
+            color:orange;
+        }
+    </style>
+</head>
+<body>
+<span id="span1">JQUERY</span>
+</body>
+</html>
