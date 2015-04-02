@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<!-- A simple program for describing the usage of addclass method -->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+        li {
+            font-size:30px;
+            font-weight:bold;
+            font-family:Lucida Calligraphy;
+            list-style-type:none;
+            
+        }
+        .red {
+            color:red;
+        }
+        .green {
+            color:green;
+        }
+        .blue {
+            color:blue;
+        }
+    </style>
+    <script src="Scripts/jquery-2.1.0.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("li").mouseover(function() {
+                if($(this).hasClass("red")) {
+                    $("#pResult").removeClass("green blue");
+                    $("#pResult").html("This is red item:" + $(this).text()).addClass("red");
+                }
+                else if($(this).hasClass("green")) {
+                    $("#pResult").removeClass("red blue");
+                   $("#pResult").html("This is green item:" + $(this).text()).addClass("green");
+               }
+                else if($(this).hasClass("blue")) {
+                    $("#pResult").removeClass("green red");
+                    $("#pResult").html("This is blue item:" + $(this).text()).addClass("blue");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+    <ul>
+        <li class="red">Item1</li>
+        <li class="green">Item2</li>
+        <li class="blue">Item3</li>
+        <li class="red">Item4</li>
+        <li class="green">Item5</li>
+        <li class="blue">Item6</li>
+    </ul>
+    <br />
+    <p id="pResult"></p>
+        </div>
+</body>
+</html>
