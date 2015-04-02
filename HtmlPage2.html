@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!-- A simple program for finding the no.of elements present in html page and displaying their content along with their node names -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script  src="Scripts/jquery-2.1.0.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                var elements = $("*");
+                
+                var nodes = "";
+                var divContents = "";
+                var spanContents = "";
+                var pContents = "";
+                for (i = 0; i < elements.length; i++) {
+                    var nodeName = elements[i].nodeName;
+                    nodes += nodeName + ",";
+                    switch (nodeName) {
+                        case "DIV":
+                            divContents += elements[i].innerHTML + "\n";
+                            break;
+                        case "P":
+                            pContents += elements[i].innerHTML + "\n";
+                            break;
+                        case "SPAN":
+                            spanContents += elements[i].innerHTML + "\n";
+                            break;
+                    }
+                   
+                }
+                alert("No.of elements:" + elements.length);
+                alert("Nodes :" + nodes.substring(0, nodes.length - 1));
+                alert("Paragraph contents :" + pContents);
+                alert("div contents :" + divContents);
+                alert("span contents :" + spanContents);
+            });
+        });
+    </script>
+</head>
+<body>
+<h3>This page contains many tags,click the below button to show their contents</h3>
+    <p>This is the content of paragraph1</p>
+    <div>This is the content of div</div>
+    <span>This is the content of span</span>
+    <p>This is the content of paragraph 2</p>
+    <br />
+    <br />
+    <input type="button" id="btn1" value="Show" />
+</body>
+</html>
