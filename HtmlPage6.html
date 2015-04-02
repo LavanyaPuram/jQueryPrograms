@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!-- A simple program for the usage of prop method in jQuery -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/jquery-2.1.0.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#chk1").change(function () {
+                if ($(this).is(":checked")) {
+                    $("#btn1").prop("disabled", false);
+                }
+                else {
+                    $("#btn1").prop("disabled", true);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<table>
+    <tr>
+        <td valign="top">
+            <b>Terms and conditions</b>
+        </td>
+        <td><textarea rows="10" cols="10"></textarea></td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <input type="checkbox" id="chk1" />
+            <label for="chk1">I agree for the terms and conditions</label>
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>
+            <input type="button" id="btn1" value="submit" disabled="disabled" />
+        </td>
+    </tr>
+</table>
+</body>
+</html>
