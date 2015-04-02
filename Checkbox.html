@@ -1,0 +1,73 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Checkbox.aspx.cs" Inherits="Checkbox" %>
+
+<!DOCTYPE html>
+
+<!-- A simple program for getting the values of selected checkboxes -->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <script src="Scripts/jquery-2.1.0.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#chkSelect").change(function () {
+                if ($(this).is(":checked")) {
+                    $("#panel1 >input:checkbox").prop("checked", true);
+                    $("label[for=chkSelect]").text("De-Select all");
+                }
+                else {
+                    $("#panel1 >input:checkbox").prop("checked", false);
+                    $("label[for=chkSelect]").text("Select all");
+                }
+            });
+            $("#panel1 >input:checkbox").change(function () {
+                var items = $("#panel1 >input:checkbox").length;
+                var chkdItems = $("#panel1 >input:checkbox:checked").length;
+                if (items == chkdItems) {
+                    $("#chkSelect").prop("checked", true);
+                    $("label[for=chkSelect]").text("De-Select all");
+
+                
+                }
+                else {
+                    $("#chkSelect").prop("Checked", false);
+                    $("label[for=chkSelect]").text("Select all");
+
+                }
+            });
+            $("#btn1").click(function () {
+                var checkedItems = "";
+                $("#panel1 >input:checkbox:checked").each(function () {
+                    checkedItems += $("label[for=" + $(this).prop("id") + "]").text();
+                });
+                if (checkedItems != "") {
+                    checkedItems = checkedItems.substring(0, checkedItems.length);
+                    $("#lblResult").html("Checked Items are:" + checkedItems);
+                }
+                else {
+                    $("#lblResult").html("No item selected");
+                }
+                return false;
+            });
+        });
+    </script>
+    </head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        
+    <asp:CheckBox ID="chkSelect" runat="server" Text="Select" /><br />
+
+        <asp:Panel ID="panel1" runat="server">
+            <asp:CheckBox ID="chk1" runat="server" Text="option1" />
+            <asp:CheckBox ID="chk2" runat="server" Text="option2" />
+            <asp:CheckBox ID="chk3" runat="server" Text="option3" />
+        </asp:Panel>
+        <br />
+        <asp:Button ID="btn1" runat="server" Text="Submit" />
+        <br />
+        <asp:Label ID="lblResult" runat="server"></asp:Label>
+    </div>
+    </form>
+</body>
+</html>
