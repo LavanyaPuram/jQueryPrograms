@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- Image slideshow using the Attr method -->
+<head>
+    <title></title>
+    <style type="text/css">
+        #img1{
+            width:400px;
+            height:350px;
+            border:5px solid green;
+            padding:10px;
+            margin:10px;
+            background-color:chocolate;
+            cursor:pointer;
+        }
+    </style>
+    <script src="Scripts/jquery-2.1.0.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var count = 1;
+            $("#img1").attr("src", "Images/1.jpg");
+            $("#img1").click(function () {
+                if (count == 1) {
+                    $("#img1").attr("src", "Images/2.jpg");
+                    count++;
+                }
+                else if (count == 2) {
+                    $("#img1").attr("src", "Images/3.jpg");
+                    count++;
+                }
+                else if (count == 3) {
+                    $("#img1").attr("src", "Images/4.jpg");
+                    count++;
+                }
+                else if (count == 4) {
+                    $("#img1").attr("src", "Images/1.jpg");
+                    count = 1;
+                }
+            });
+        });
+    </script>
+</head>
+    <div>
+<body>
+        <b>Click below image to view next image</b>
+        <br />
+        <br />
+        <img id="img1" />
+    </div>
+</body>
+</html>
