@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/jquery-2.1.0.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#btnShow").click(function () {
+                $("#img1").show(3000);
+            });
+            $("#btnHide").click(function () {
+                $("#img1").hide(3000);
+            });
+            $("#btnToggle").click(function () {
+                $("#img1").toggle(3000);
+            });
+        });
+    </script>
+    <style type="text/css">
+        #img1 {
+            border:2px solid chocolate;
+            width:400px;
+            height:450px;
+        }
+    </style>
+</head>
+<body>
+    <div align="center">
+        <marquee style="font-size:30px;color:red;font-family:'Lucida Calligraphy'"> welcome to my page</marquee>
+        <input type="button" id="btnShow" value="Show" />
+        &nbsp;
+        <input type="button" id="btnHide" value="Hide" />
+        &nbsp;
+        <input type="button" id="btnToggle" value="Toggle" />
+        <br />
+        <br />
+        <img src="Images/3.jpg" id="img1" alt="Lavanya" />
+    </div>
+
+</body>
+</html>
