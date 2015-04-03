@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<!-- This is a small program for showing the div content upon selecting a particular dropdownlist item -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/jquery-2.1.0.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("select").change(function () {
+                var v = $("select").val();
+                if (v == "Second") {
+                    $("#div1").show();
+                }
+                else {
+                    $("#div1").hide();
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <select >
+        <option id="one" value="First">Car</option>
+        <option id="two" value="Second" selected="selected">Plane</option>
+    </select>
+    <div id="div1">This is the content in div</div>
+</body>
+</html>
