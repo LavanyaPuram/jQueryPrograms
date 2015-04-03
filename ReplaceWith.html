@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<!-- A simple program for describing the usage of "replacewith" function -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/jquery-2.1.0.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("div").mouseover(function () {
+                   $(this).replaceWith("<div><img src='Images\\"+$(this).text()+".JPG' width=300px; height:300px/></div>");
+            });
+           
+        });
+    </script>
+    <style type="text/css">
+        div {
+            border:2px solid green;
+            width:300px;
+            height:300px;
+            float:left;
+            padding:5px;
+            margin:5px;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Click on the below box to view their images</h2>
+    <div>1</div>  
+    <div>2</div>  
+    <div>3</div>  
+</body>
+</html>
+            
